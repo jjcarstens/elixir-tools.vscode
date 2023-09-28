@@ -174,6 +174,10 @@ async function activateNextLS(
         { scheme: "file", language: "surface" },
         { scheme: "file", language: "phoenix-heex" },
       ],
+      initializationOptions: {
+        env: config.get("env", "dev"),
+        target: config.get("target", "host")
+      }
     };
 
     nextLSClient = new LanguageClient(
